@@ -1,0 +1,360 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background: #f0f2f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.painel-lateral {
+    width: 270px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.12);
+}
+
+.painel-lateral h3 {
+    margin-top: 0;
+    color: #222;
+    font-size: 22px;
+}
+
+.painel-lateral h4 {
+    margin-bottom: 10px;
+}
+
+.colinha {
+    padding: 12px;
+    margin: 15px 0 20px;
+    background: #f7f9fa;
+    border-left: 4px solid #00a859;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.links-uteis {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links-uteis a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.links-uteis a:hover {
+    text-decoration: underline;
+}
+
+.urna {
+    display: flex;
+    padding: 30px;
+    background: #dbd5c9;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.tela {
+    width: 500px;
+    height: 350px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #e4eed7 0%, #adc397 100%);
+    border: 2px solid #555;
+    box-shadow: inset 0 0 10px rgba(0,0,0,.2);
+}
+
+.d-1 {
+    flex: 1;
+    display: flex;
+}
+
+.d-1-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.d-1-topo {
+    min-height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+.d-1-cargo {
+    margin: 15px 0;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.d-1-numero {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.numero-pisca {
+    width: 30px;
+    height: 40px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    font-size: 25px;
+    background: rgba(255,255,255,.12);
+}
+
+@keyframes piscar {
+    0%, 100% { opacity: .2; }
+    50% { opacity: 1; }
+}
+
+.numero-pisca.em-foco {
+    animation: piscar 1s infinite;
+}
+
+.d-1-informacoes {
+    font-size: 15px;
+    line-height: 23px;
+    margin-top: 10px;
+}
+
+.d-1-right {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.d-1-image img {
+    width: 100px;
+    height: 125px;
+    object-fit: cover;
+    border: 1px solid #000;
+    display: none;
+}
+
+.d-2 {
+    border-top: 2px solid #000;
+    padding-top: 10px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.teclado {
+    width: 300px;
+    background: #403a3a;
+    margin-left: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.teclado--linha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teclado--botao {
+    width: 60px;
+    height: 45px;
+    margin: 8px;
+    border: 0;
+    border-radius: 4px;
+    background: #111;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #000;
+    user-select: none;
+}
+
+.teclado--botao:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.teclado--botao:focus-visible {
+    outline: 3px solid #fff;
+}
+
+.teclado--linha.acoes {
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-branco {
+    width: 75px;
+    height: 40px;
+    background: #fff;
+    color: #000;
+    font-size: 10px;
+}
+
+.btn-corrigir {
+    width: 75px;
+    height: 40px;
+    background: #f05a28;
+    color: #000;
+    font-size: 10px;
+}
+
+.btn-confirmar {
+    width: 85px;
+    height: 50px;
+    background: #00a859;
+    color: #000;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.voto-nulo,
+.voto-branco {
+    margin-top: 20px;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.voto-nulo {
+    color: #b00000;
+}
+
+.tela--fim {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    font-weight: bold;
+}
+
+@media (max-width: 1050px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .painel-lateral {
+        width: min(800px, 100%);
+    }
+
+    .urna {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    .urna {
+        width: 100%;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .tela {
+        width: 100%;
+        height: 350px;
+    }
+
+    .teclado {
+        width: 100%;
+        margin: 20px 0 0;
+    }
+}
+
+
+/* Contador de votos */
+.contador-votos {
+    margin: 18px 0 20px;
+    padding: 14px;
+    background: #f7f9fa;
+    border: 1px solid #d8dde2;
+    border-radius: 8px;
+}
+
+.contador-votos h4 {
+    margin: 0 0 10px;
+    font-size: 17px;
+}
+
+.total-votos {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.resultado-votos {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.resultado-votos .linha-voto {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px 7px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.resultado-votos .linha-voto strong {
+    white-space: nowrap;
+}
+
+/* Presidente e vice lado a lado */
+.d-1-right {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.candidato-card,
+.vice-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+.rotulo-foto {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+#foto-candidato,
+#foto-vice {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #222;
+}
+#nome-vice {
+    font-size: 14px;
+    text-align: center;
+}
+@media (max-width: 700px) {
+    .d-1-right { gap: 8px; }
+    #foto-candidato,
+    #foto-vice { width: 95px; height: 95px; }
+}

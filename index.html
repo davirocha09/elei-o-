@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Urna Eletrônica Interativa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="painel-lateral">
+        <h3>Guia do Eleitor</h3>
+        <p>Use os números abaixo para testar a urna:</p>
+
+        <div class="colinha">
+            <strong>Presidente</strong>
+            <div>• 22 — Yuri22 | Vice: Tio San</div>
+            <div>• 07 — Coringa | Vice: Gabepeixe</div>
+            <div>• 69 — Jon Vlogs| Vice: Queridão </div>
+            <div>• 67 — Renato Cariani | Vice: Julio Balestrin</div>
+            <div>• 13 — Lula | Vice: Geraldo Alckmin</div>
+            <div>• 90 — Bistecone | Vice:Eduardo </div>
+            <div>• 77 — Gordão da XJ | Vice: Gordão NS</div>
+            <div>• 38 — Alanzoka | Vice: Brino</div>
+            <div>• 19 — Dona | Vice: Astro</div>
+        </div>
+
+        <section class="contador-votos" id="painel-votos" aria-label="Contador de votos">
+            <h4>Contador de votos</h4>
+            <div class="total-votos">Total: <strong id="total-votos">0</strong></div>
+            <div id="resultado-votos" class="resultado-votos"></div>
+        </section>
+
+        <div class="links-uteis">
+            <h4>Links Oficiais (TSE)</h4>
+            <a href="https://www.tse.jus.br/" target="_blank" rel="noopener noreferrer">Portal do TSE ➔</a>
+            <a href="https://www.tse.jus.br/eleicoes/" target="_blank" rel="noopener noreferrer">Eleições ➔</a>
+            <a href="https://www.tse.jus.br/servicos-eleitorais/" target="_blank" rel="noopener noreferrer">Serviços Eleitorais ➔</a>
+        </div>
+    </aside>
+
+    <main class="urna">
+        <section class="tela" id="tela">
+            <div class="d-1">
+                <div class="d-1-left">
+                    <div class="d-1-topo" id="topo">SEU VOTO VAI PARA:</div>
+
+                    <div class="d-1-cargo">
+                        <span id="cargo">PRESIDENTE</span>
+                    </div>
+
+                    <div class="d-1-numero">
+                        <span>Número:</span>
+                        <div class="numero-pisca em-foco" id="numero1"></div>
+                        <div class="numero-pisca" id="numero2"></div>
+                    </div>
+
+                    <div class="d-1-informacoes" id="informacoes">
+                        Nome:<br>
+                        Partido:<br>
+                        Vice:
+                    </div>
+                </div>
+
+                <div class="d-1-right">
+                    <div class="d-1-image candidato-card">
+                        <span class="rotulo-foto">PRESIDENTE</span>
+                        <img src="" alt="Foto do candidato a presidente" id="foto-candidato">
+                    </div>
+                    <div class="d-1-image vice-card">
+                        <span class="rotulo-foto">VICE</span>
+                        <img src="" alt="Foto do candidato a vice" id="foto-vice">
+                        <strong id="nome-vice"></strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-2">
+                Aperte a tecla:<br>
+                <strong>VERDE</strong> para CONFIRMAR<br>
+                <strong>LARANJA</strong> para CORRIGIR<br>
+                <strong>BRANCO</strong> para VOTO EM BRANCO
+            </div>
+        </section>
+
+        <section class="teclado" aria-label="Teclado da urna">
+            <div class="teclado--linha">
+                <button class="teclado--botao" data-num="1">1</button>
+                <button class="teclado--botao" data-num="2">2</button>
+                <button class="teclado--botao" data-num="3">3</button>
+            </div>
+            <div class="teclado--linha">
+                <button class="teclado--botao" data-num="4">4</button>
+                <button class="teclado--botao" data-num="5">5</button>
+                <button class="teclado--botao" data-num="6">6</button>
+            </div>
+            <div class="teclado--linha">
+                <button class="teclado--botao" data-num="7">7</button>
+                <button class="teclado--botao" data-num="8">8</button>
+                <button class="teclado--botao" data-num="9">9</button>
+            </div>
+            <div class="teclado--linha">
+                <button class="teclado--botao" data-num="0">0</button>
+            </div>
+            <div class="teclado--linha acoes">
+                <button class="teclado--botao btn-branco" id="btn-branco">BRANCO</button>
+                <button class="teclado--botao btn-corrigir" id="btn-corrigir">CORRIGIR</button>
+                <button class="teclado--botao btn-confirmar" id="btn-confirmar">CONFIRMAR</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
